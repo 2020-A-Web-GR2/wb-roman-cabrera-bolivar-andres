@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import {HttpGameModule} from "./http/http-game.module";
 
 @Module({
   imports: [
-      //Here other modules
+      HttpGameModule
   ],
   controllers: [
       //App module controller
