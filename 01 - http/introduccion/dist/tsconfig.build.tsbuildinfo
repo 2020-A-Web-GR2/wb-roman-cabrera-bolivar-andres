@@ -1146,8 +1146,18 @@
         "signature": "3293b0d1d6a7f902316e164fcf36ae099f1bbb0224484586eaab30d9dea78d32",
         "affectsGlobalScope": false
       },
+      "../src/http/http-game.controller.ts": {
+        "version": "adf34d974a6485c649e233a977c14fbb4fcb4bac84a66b45c3831e1eec0cb1ce",
+        "signature": "c923cdc647fe044589c0a5f28ee1435c55d85f6c617e7b0e5fd78a4e7e045b2c",
+        "affectsGlobalScope": false
+      },
+      "../src/http/http-game.module.ts": {
+        "version": "bf8dad8fa25ccef0f8ccb42b7e39359242ddcd6d90c7dd5c2cebddd852230ce5",
+        "signature": "0c864f5f7691e5bfdc48132c05508703c277666458561bffe07721aa6e5611d2",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "c1b18facba1508edbddafcc71bb29e53cc7bf59487ad8f9fcda6e5422f10f239",
+        "version": "9db387a7557c9d101a9b1d5e719509b5615f4f0919fcbc249acb5c986c61f670",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -1332,23 +1342,13 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "f8c726a1d3bb518c5f1d666169a67b723c56d6b298553f29683e320115919507",
+        "version": "1a8b3c4b72b5626f53873df79e04aa4efa9bc663e677aa7221d82b5474792c29",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
-      "../src/http/http.controller.ts": {
-        "version": "7cf965f5a994366328a4287c9ff29e4247d14fe747a515aabca61db82d5f1c7e",
-        "signature": "ce680c5c903e4dcb1f880e2747d6672b6a71c16bd8a30801a736ef119675ff45",
-        "affectsGlobalScope": false
-      },
-      "../src/http/http.module.ts": {
-        "version": "2d8be7f5b51eacfb5990b6bc98e1a51724160edfc95a6418d0e2701514a62033",
-        "signature": "d8859ee585b17b2b6412684b67e71af772eef103c1b05dadd43c3fbda4b513d4",
-        "affectsGlobalScope": false
-      },
-      "../src/http/http.service.ts": {
-        "version": "547789a79563c8e3f69bbbd13fa1e60fefa72c9a9ff48fdea609a9b8094ba62b",
-        "signature": "26231b1103d3676558a62fed37e13aa19e726a166c4c9b3e6ce77b613a764f21",
+      "../src/http/http-game.service.ts": {
+        "version": "26ab843e787b82b838c3d95e33b1f86ea9f17ab1e95ab5e4bf02f2d4701fd376",
+        "signature": "5ec51f37a131f33eb1b815e8e73a5d4993280e1a849e4cdcb4cbcf735546fe2d",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -5121,7 +5121,8 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/app.controller.ts",
-        "../src/app.service.ts"
+        "../src/app.service.ts",
+        "../src/http/http-game.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -5131,14 +5132,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/http/http.controller.ts": [
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../src/http/http.module.ts": [
+      "../src/http/http-game.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -5146,7 +5140,16 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/http/http.service.ts": [
+      "../src/http/http-game.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/http/http-game.controller.ts"
+      ],
+      "../src/http/http-game.service.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -8772,9 +8775,9 @@
       "../src/app.controller.ts",
       "../src/app.module.ts",
       "../src/app.service.ts",
-      "../src/http/http.controller.ts",
-      "../src/http/http.module.ts",
-      "../src/http/http.service.ts",
+      "../src/http/http-game.controller.ts",
+      "../src/http/http-game.module.ts",
+      "../src/http/http-game.service.ts",
       "../src/main.ts"
     ]
   },
