@@ -1,4 +1,4 @@
-import {BadRequestException, Controller, Delete, Get, Header, HttpCode, Param, Post} from "@nestjs/common";
+import {BadRequestException, Body, Controller, Delete, Get, Header, HttpCode, Param, Post, Query} from "@nestjs/common";
 
 @Controller('games-http')
 export class HttpGameController{
@@ -37,5 +37,22 @@ export class HttpGameController{
         }
 
     }
+
+    @Get('query-params')
+    queryParams(
+        @Query() queryParams
+    ){
+        console.log('query-params', queryParams);
+        return queryParams.nombre + ' ' + queryParams.apellido +  ':)';
+    }
+
+    @Post('body-params')
+    bodyParams(
+        @Body() bodyParams
+    ){
+        console.log('body-params', bodyParams);
+        return 'record created';
+    }
+
 
 }

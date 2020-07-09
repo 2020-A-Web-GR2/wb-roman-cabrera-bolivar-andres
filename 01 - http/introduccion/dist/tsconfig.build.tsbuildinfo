@@ -1147,8 +1147,8 @@
         "affectsGlobalScope": false
       },
       "../src/http/http-game.controller.ts": {
-        "version": "adf34d974a6485c649e233a977c14fbb4fcb4bac84a66b45c3831e1eec0cb1ce",
-        "signature": "c923cdc647fe044589c0a5f28ee1435c55d85f6c617e7b0e5fd78a4e7e045b2c",
+        "version": "4d1dc3eb54f402d16f2c3d13a51b8b7ba5f2c74fb5683c83314d8ce2dacf621d",
+        "signature": "a2f8337595b5a59a6991c1cc9c7bac94712e4810c2dda290ccb1f12d264fc5cb",
         "affectsGlobalScope": false
       },
       "../src/http/http-game.module.ts": {
