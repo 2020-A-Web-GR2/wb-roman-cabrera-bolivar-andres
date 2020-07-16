@@ -1,4 +1,18 @@
-import {BadRequestException, Body, Controller, Delete, Get, Header, HttpCode, Param, Post, Query} from "@nestjs/common";
+import {
+    BadRequestException,
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Header,
+    HttpCode,
+    Param,
+    Post,
+    Query,
+    Req, Res
+} from "@nestjs/common";
+import {PuppyCreateDto} from "./dto/puppy.create-dto";
+import {validate, ValidationError} from "class-validator";
 
 @Controller('games-http')
 export class HttpGameController{
@@ -47,11 +61,87 @@ export class HttpGameController{
     }
 
     @Post('body-params')
-    bodyParams(
+    async bodyParams(
         @Body() bodyParams
     ){
-        console.log('body-params', bodyParams);
-        return 'record created';
+        const validPuppet = new PuppyCreateDto();
+        validPuppet.name = bodyParams.name;
+        validPuppet.age = bodyParams.age;
+        validPuppet.married = bodyParams.married;
+        validPuppet.ligature = bodyParams.ligature;
+        validPuppet.weight = bodyParams.weight;
+
+        try {
+            const isErrors:ValidationError[] = await validate(validPuppet)
+            if(isErrors.length > 0){
+                console.error('Errors: ', isErrors);
+                throw new BadRequestException('Validation error');
+            }else{
+                return {
+                    msg: 'Created'
+                };
+            }
+
+        }catch (e) {
+            throw new BadRequestException('Validation error')
+        }
+    }
+
+    @Get('saveInsecureCookie')
+    saveInsecureCookie(
+        @Query() queryParams,
+        @Req() req, //request
+        @Res() res //response
+    ) {
+        res.cookie(
+            'insecureCookie', //cookieName
+            'Hungry', //value
+        );
+        res.send({
+            msg: 'ok'
+        })
+        //not allowed to use return when using @Res()
+
+    }
+
+
+    @Get('saveSafeCookie')
+    saveSecureCookie(
+        @Query() queryParams,
+        @Req() req, //request
+        @Res() res //response
+    ) {
+        res.cookie(
+            'safeCookie', //cookieName
+            'Web :3', //value
+            {
+                secure: true
+            }
+        );
+        res.send({
+            msg: 'safeCookie'
+        })
+        //not allowed to use return when using @Res()
+    }
+
+    @Get ( 'showCookies')
+    showCookies(
+        @Req() req
+    ){
+        return ({
+            noSigned: req.cookies,
+            signed: req.signedCookies
+        });
+    }
+
+    @Get('saveSignedCookie')
+    saveSignedCookie(
+        @Res() res
+    ){
+        res.cookie('signed','mySecret',{signed: true});
+        res.send({
+            msg: 'ok'
+        });
     }
 
 
