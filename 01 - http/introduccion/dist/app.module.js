@@ -10,13 +10,13 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const calc_module_1 = require("./calculadora/calc.module");
+const http_game_module_1 = require("./http/http-game.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            calc_module_1.CalcModule
+            http_game_module_1.HttpGameModule
         ],
         controllers: [
             app_controller_1.AppController
