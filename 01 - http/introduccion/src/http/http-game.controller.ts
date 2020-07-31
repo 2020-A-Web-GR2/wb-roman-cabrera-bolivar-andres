@@ -16,6 +16,7 @@ import {validate, ValidationError} from "class-validator";
 
 @Controller('games-http')
 export class HttpGameController{
+
     @Get('hello')
     @HttpCode(201)
     helloGET(){
