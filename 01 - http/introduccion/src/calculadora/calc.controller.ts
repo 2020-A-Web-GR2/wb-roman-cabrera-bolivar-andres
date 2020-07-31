@@ -181,6 +181,8 @@ export  class CalcController{
                         status: HttpStatus.NOT_ACCEPTABLE,
                         error: 'Dividend must be greater than 0'
                     },HttpStatus.NOT_ACCEPTABLE);
+
+                    
                 }
             }else{
                 throw new BadRequestException('Incorrect parameters');
