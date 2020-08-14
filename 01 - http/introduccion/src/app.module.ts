@@ -1,30 +1,36 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import {HttpGameModule} from "./http/http-game.module";
 import {UsuarioModule} from "./usuario/usuario.module";
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {CalcModule} from "./calculadora/calc.module";
+import {UsuarioEntity} from "./usuario/usuario.entity";
+import {MascotaModule} from "./mascota/mascota.module";
+import {VacunaModule} from "./vacuna/vacuna.module";
+import {VacunaEntity} from "./vacuna/vacuna.entity";
+import {MascotaEntity} from "./mascota/mascota.entity";
+
 
 @Module({
   imports: [
-     /* HttpGameModule,
       UsuarioModule,
+      MascotaModule,
+      VacunaModule,
       TypeOrmModule.forRoot({
-          name: '', //connection name
+          name: 'default', //connection name
           type: 'mysql', //mysql, postgres, oracle, etc
           host: 'localhost', //ip
           port: 3306, //port db
           username: 'root', //user
-          password: 'root', //password
+          password: '', //password
           database: 'test', //database name
           entities: [
-
+              UsuarioEntity,
+              VacunaEntity,
+              MascotaEntity
           ], //describe all entities to connect
           synchronize: true, //update database schema
           dropSchema: false, //delete data and database schema
-      })*/
-      CalcModule
+      })
   ],
   controllers: [
       //App module controller

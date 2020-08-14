@@ -13,4 +13,17 @@ export class UsuarioService {
     createOne(newUser : UsuarioEntity){
         return this.repo.save(newUser)
     }
+    findAll(){
+        return this.repo.find()
+    }
+    findOne(id: number){
+        return this.repo.findOne(id)
+    }
+    updateOne(editedUser : UsuarioEntity){
+        return this.repo.save(editedUser)
+    }
+    deleteOne(id: number) {
+        return this.repo.delete(id);
+    }
+
 }
