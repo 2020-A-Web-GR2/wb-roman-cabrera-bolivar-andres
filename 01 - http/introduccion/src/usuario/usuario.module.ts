@@ -9,10 +9,12 @@ import  {UsuarioEntity} from './usuario.entity';
         UsuarioController
     ],
     imports: [
-        TypeOrmModule.forFeature([
+        TypeOrmModule
+            .forFeature(
+                [
                 UsuarioEntity
-        ],
-            '') // connection string name
+                ],
+            'default') // connection string name
      ],
     providers: [
         UsuarioService

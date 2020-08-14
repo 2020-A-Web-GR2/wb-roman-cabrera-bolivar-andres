@@ -1,22 +1,18 @@
-import {Column, Entity, Index, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, Index, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {MascotaEntity} from "../mascota/mascota.entity";
 
 @Index([
-    'id',
-    'columOne',
-    'columTwo',
+    'name',
+    'last_name',
     'dni',
-    'wage',
-    'dateBorn',
-    'dateTimeBorn' //properties name in class
+    'dateBorn'
 ])
-
-@Index(['name','lastname','id_ced'],{unique : true})
 
 @Entity('epn_user') //table name
 export class UsuarioEntity{
     @PrimaryGeneratedColumn({
         unsigned : true,
-        comment : 'id',
+        comment : 'identification',
         name : 'id'
 
     })
@@ -28,7 +24,7 @@ export class UsuarioEntity{
         nullable : true,
         length : '60'
     })
-    columnOne? : string;
+    name? : string;
 
     @Column({
         name : 'last_name',
@@ -36,10 +32,10 @@ export class UsuarioEntity{
         nullable : true,
         length : '60'
     })
-    columnTwo? : string;
+    last_name? : string;
 
     @Column({
-        name : 'id_ced',
+        name : 'dni',
         type : 'varchar',
         nullable : false,
         unique : true,
@@ -69,4 +65,10 @@ export class UsuarioEntity{
         nullable : true
     })
     dateTimeBorn? : string;
+
+    @OneToMany(
+        type => MascotaEntity,
+        mascota => mascota.user
+    )
+    mascotas : MascotaEntity[]
 }
