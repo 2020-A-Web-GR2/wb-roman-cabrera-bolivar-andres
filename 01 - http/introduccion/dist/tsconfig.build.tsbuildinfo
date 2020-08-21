@@ -2471,24 +2471,24 @@
         "signature": "e021ec02c30625a6bdd12ece60df640d805bdde4ef15571c24403e442491ddc7",
         "affectsGlobalScope": false
       },
-      "../src/usuario/usuario.controller.ts": {
-        "version": "e80a8ac1e8559db08c1ae6b65cbf8a91360d18fdbc51a37ea81570074daa4f05",
-        "signature": "8db94228b71fd3ffa64afe500ae5d7c34477a0c22811c2a79ce2d918f9bc2a42",
-        "affectsGlobalScope": false
-      },
-      "../src/usuario/usuario.module.ts": {
-        "version": "202cf9acf1bd4c2c54e375262c9d9f689122aa5b8f099e6769d65fdc6e1a041d",
-        "signature": "0abd7e5271059d7ef398c56b5a7be40e08cec1cbb7af29da0e90e8c8bcf2cf59",
-        "affectsGlobalScope": false
-      },
       "../src/mascota/mascota.service.ts": {
         "version": "58bd6257d13075be9780a127d9fc7d147ae7794d941896910e58c670d4e6bb29",
         "signature": "dedfab2584ce6d9016d08d826dc6ddfa8f365a630d79badf2d113670257b70ba",
         "affectsGlobalScope": false
       },
+      "../src/usuario/usuario.controller.ts": {
+        "version": "0bf06fbaf39c22c3b2eff6789a206f2fadb9e1f6182fc822c7f07a4ef3159d74",
+        "signature": "2c2dd38aec0f1187b0dafc8efe61b3c725e3a0e5c1c9d9cdc7eb7c8ff58c39a6",
+        "affectsGlobalScope": false
+      },
       "../src/mascota/mascota.module.ts": {
         "version": "8e5e16ed9dc3c7768937ea8b3d628bbd95a1886680c4e87594ebf579beed75ad",
         "signature": "408b61b8cf2bbe86deb4721e25a915d73716321fa45fa7636d3b4257f1d86dc7",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/usuario.module.ts": {
+        "version": "bb84d92627df35529089b7b0f698d921d3e3336b554d2e219de94f93df096042",
+        "signature": "0abd7e5271059d7ef398c56b5a7be40e08cec1cbb7af29da0e90e8c8bcf2cf59",
         "affectsGlobalScope": false
       },
       "../src/vacuna/vacuna.module.ts": {
@@ -2682,7 +2682,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "29865383897cd68f2963b91b385aa3268eb6387808a7ce0e26bd9115f0c2860c",
+        "version": "0233e7b0e3259e5a048021a29b89482b7d77f3c57b7c9566e04e6b8fb26a9718",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -3334,6 +3334,16 @@
       "../src/http/http-game.service.ts": {
         "version": "26ab843e787b82b838c3d95e33b1f86ea9f17ab1e95ab5e4bf02f2d4701fd376",
         "signature": "5ec51f37a131f33eb1b815e8e73a5d4993280e1a849e4cdcb4cbcf735546fe2d",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.create-dto.ts": {
+        "version": "413d2f19db3c05d608ee2abedd6be16ed9437aa72458051b70dd29aec561c9f0",
+        "signature": "796fb3a63e00b87ff56eb735a18255f47531dc87b2e8ba685af7ce52ed72c49f",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.update-dto.ts": {
+        "version": "413d2f19db3c05d608ee2abedd6be16ed9437aa72458051b70dd29aec561c9f0",
+        "signature": "796fb3a63e00b87ff56eb735a18255f47531dc87b2e8ba685af7ce52ed72c49f",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -10913,6 +10923,22 @@
         "../node_modules/typeorm/index.d.ts",
         "../src/mascota/mascota.entity.ts"
       ],
+      "../src/usuario/dto/usuario.create-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/usuario/dto/usuario.update-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
       "../src/usuario/usuario.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -10920,6 +10946,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/mascota/mascota.service.ts",
         "../src/usuario/usuario.service.ts"
       ],
       "../src/usuario/usuario.entity.ts": [
@@ -10939,6 +10966,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/mascota/mascota.module.ts",
         "../src/usuario/usuario.controller.ts",
         "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
@@ -17910,6 +17938,7 @@
         "../src/mascota/mascota.entity.ts"
       ],
       "../src/usuario/usuario.controller.ts": [
+        "../src/mascota/mascota.service.ts",
         "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
       ],
@@ -18686,6 +18715,8 @@
       "../src/mascota/mascota.entity.ts",
       "../src/mascota/mascota.module.ts",
       "../src/mascota/mascota.service.ts",
+      "../src/usuario/dto/usuario.create-dto.ts",
+      "../src/usuario/dto/usuario.update-dto.ts",
       "../src/usuario/usuario.controller.ts",
       "../src/usuario/usuario.entity.ts",
       "../src/usuario/usuario.module.ts",

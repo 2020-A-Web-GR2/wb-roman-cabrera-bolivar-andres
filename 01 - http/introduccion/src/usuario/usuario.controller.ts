@@ -7,9 +7,10 @@ import {
     InternalServerErrorException, NotFoundException,
     Param,
     Post,
-    Put
+    Put, Res
 } from '@nestjs/common';
 import {UsuarioService} from "./usuario.service";
+import {MascotaService} from "../mascota/mascota.service";
 
 @Controller('usuario')
 export class UsuarioController {
@@ -31,7 +32,8 @@ export class UsuarioController {
     currentid = 3
 
     constructor( //inyeccion
-        private readonly _usuarioService : UsuarioService
+        private readonly _usuarioService : UsuarioService,
+        private readonly _mascotaService : MascotaService
     ) {
     }
 
@@ -146,4 +148,64 @@ export class UsuarioController {
             })
         }
     }
+
+
+    @Post('userMascota')
+    async createUserAndMascota(
+        @Body() bodyParams
+    ){
+        const user = bodyParams.user;
+        const mascota = bodyParams.mascota;
+        //validate user and puppet, create both
+        let createdUser;
+        try {
+            createdUser = await  this._usuarioService.createOne(user);
+        } catch (e) {
+            console.error(e);
+            throw new InternalServerErrorException({
+                msg : 'Error creating user',
+            })
+        }
+        if (createdUser) {
+            mascota.user = createdUser.id;
+            let createdMascota;
+            try {
+                createdMascota = await this._mascotaService.createNewMascota(mascota);
+            } catch (e) {
+                console.error(e);
+                throw new InternalServerErrorException({
+                    msg : 'Error creating mascota'
+                })
+            }
+            if (createdMascota) {
+                return {
+                    mascota : createdMascota,
+                    user : createdUser
+                }
+            } else {
+                throw new InternalServerErrorException({
+                    msg: 'Error creating mascota'
+                })
+        }
+    }  else {
+            throw new InternalServerErrorException({
+                msg: 'Error creating mascota'
+            })
+        }
+    }
+
+
+    @Get('view/user')
+    viewUser(
+        @Res() res
+    ){
+        const nameController = 'Bolivar'
+        res.render(
+            'example', //view name, file
+            { //view parameters
+                name : nameController,
+            })
+    }
+
+
 }
