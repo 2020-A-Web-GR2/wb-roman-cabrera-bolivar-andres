@@ -1,3 +1,0 @@
-function alertMessage(){
-    alert('CUIDADO!')
-}

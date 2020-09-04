@@ -9,9 +9,9 @@ async function bootstrap() {
    * Write config here, before app.listen()
    * */
   app.use(cookieParser('mySecret'))
+  await app.listen(3001);
   app.set('view engine', 'ejs')
   app.use(express.static('public'))
-  await app.listen(3001);
 
 }
 

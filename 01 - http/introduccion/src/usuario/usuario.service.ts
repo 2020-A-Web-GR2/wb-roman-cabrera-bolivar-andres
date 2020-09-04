@@ -25,4 +25,5 @@ export class UsuarioService {
     deleteOne(id: number) {
         return this.repo.delete(id);
     }
+
 }

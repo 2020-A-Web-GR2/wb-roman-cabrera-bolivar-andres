@@ -2467,7 +2467,7 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.service.ts": {
-        "version": "b0c964449578c8164f6779aa97cd3bad40b0220449632fb91f006d4da508b377",
+        "version": "407faa6b8b0a05007d5cef777baf4523705910928d44fb6540fcf4cc89bc5926",
         "signature": "e021ec02c30625a6bdd12ece60df640d805bdde4ef15571c24403e442491ddc7",
         "affectsGlobalScope": false
       },
@@ -2476,14 +2476,9 @@
         "signature": "dedfab2584ce6d9016d08d826dc6ddfa8f365a630d79badf2d113670257b70ba",
         "affectsGlobalScope": false
       },
-      "../node_modules/rxjs/internal/util/canreporterror.d.ts": {
-        "version": "06c15ec404116c372402f258c91e4aa04693b6b6e3ddc3ca0fa25c74dd8bee86",
-        "signature": "06c15ec404116c372402f258c91e4aa04693b6b6e3ddc3ca0fa25c74dd8bee86",
-        "affectsGlobalScope": false
-      },
       "../src/usuario/usuario.controller.ts": {
-        "version": "243d2f4c205ce19b21e515f1601e8e912c8509cdbd7c1448e72cebe0af704c52",
-        "signature": "477994696f0d260f0fa1a8f62b6154b4d5b37d49abe079bc033fae9cbb2ec993",
+        "version": "0bf06fbaf39c22c3b2eff6789a206f2fadb9e1f6182fc822c7f07a4ef3159d74",
+        "signature": "2c2dd38aec0f1187b0dafc8efe61b3c725e3a0e5c1c9d9cdc7eb7c8ff58c39a6",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {
@@ -2687,7 +2682,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "7cc532901bf0b5324112ee397c2dbdec1af83a255788af2983399797b8d87746",
+        "version": "0233e7b0e3259e5a048021a29b89482b7d77f3c57b7c9566e04e6b8fb26a9718",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -8014,15 +8009,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/rxjs/internal/util/canreporterror.d.ts": [
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/rxjs/internal/subject.d.ts",
-        "../node_modules/rxjs/internal/subscriber.d.ts"
-      ],
       "../node_modules/rxjs/internal/util/emptyerror.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -10960,7 +10946,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/rxjs/internal/util/canreporterror.d.ts",
         "../src/mascota/mascota.service.ts",
         "../src/usuario/usuario.service.ts"
       ],
@@ -12555,8 +12540,7 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.utils.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -12566,8 +12550,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/rxjs/index.d.ts"
       ],
       "../node_modules/@nestjs/typeorm/dist/index.d.ts": [
         "../node_modules/@nestjs/typeorm/dist/common/index.d.ts",
@@ -12584,8 +12567,7 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@nestjs/typeorm/dist/interfaces/index.d.ts": [
         "../node_modules/@nestjs/typeorm/dist/interfaces/typeorm-options.interface.d.ts",
@@ -12602,8 +12584,7 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -12613,8 +12594,7 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@nestjs/typeorm/index.d.ts": [
         "../node_modules/@nestjs/typeorm/dist/index.d.ts",
@@ -15164,15 +15144,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/rxjs/internal/util/canreporterror.d.ts": [
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/rxjs/internal/subject.d.ts",
-        "../node_modules/rxjs/internal/subscriber.d.ts"
       ],
       "../node_modules/rxjs/internal/util/emptyerror.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -18437,7 +18408,6 @@
       "../node_modules/rxjs/internal/symbol/observable.d.ts",
       "../node_modules/rxjs/internal/types.d.ts",
       "../node_modules/rxjs/internal/util/argumentoutofrangeerror.d.ts",
-      "../node_modules/rxjs/internal/util/canreporterror.d.ts",
       "../node_modules/rxjs/internal/util/emptyerror.d.ts",
       "../node_modules/rxjs/internal/util/identity.d.ts",
       "../node_modules/rxjs/internal/util/isobservable.d.ts",
