@@ -1,0 +1,7 @@
+body{
+    font-family: Arial;
+    color: firebrick;
+}
+td, th {
+    border: 1px solid #dddddd;
+}

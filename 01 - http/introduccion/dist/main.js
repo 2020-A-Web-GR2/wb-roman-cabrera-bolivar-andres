@@ -7,9 +7,9 @@ const express = require('express');
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.use(cookieParser('mySecret'));
-    await app.listen(3001);
     app.set('view engine', 'ejs');
     app.use(express.static('public'));
+    await app.listen(3001);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
