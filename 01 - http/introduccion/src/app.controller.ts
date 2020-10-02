@@ -12,7 +12,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  /*@Get('login')
+  @Get('login')
   login(
       @Res() res,
       @Session() session,
@@ -51,12 +51,12 @@ export class AppController {
     session.user = undefined;
     req.session.destroy();
     return res.redirect('/login')
-  }*/
+  }
 
 
 
 
-  @Post('login')
+  /*@Post('login')
   loginPost(
     @Res() res,
     @Body() body,
@@ -109,6 +109,6 @@ export class AppController {
     session.roles = undefined;
     req.session.destroy();
     return res.redirect('/login')
-  }
+  }*/
 
 }

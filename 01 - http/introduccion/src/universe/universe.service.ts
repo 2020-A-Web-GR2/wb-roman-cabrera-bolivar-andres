@@ -11,7 +11,7 @@ export class UniverseService{
     ) {
     }
 
-    findByName(queryText? : String){
+    findByName(queryText? : string){
         const query : FindManyOptions<UniverseEntity> = {
             where: [
                 {
@@ -21,7 +21,7 @@ export class UniverseService{
         }
         return this.repo.find(query)
     }
-    findByLocation(queryText? : String){
+    findByLocation(queryText? : string){
         const query : FindManyOptions<UniverseEntity> = {
             where : [
                 {
