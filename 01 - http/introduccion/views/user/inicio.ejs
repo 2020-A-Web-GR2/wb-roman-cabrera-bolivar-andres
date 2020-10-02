@@ -19,6 +19,19 @@
 <a href="/usuario/view/create">
     <button>Add</button>
 </a>
+<br>
+<% if (typeof queryParams != 'undefined') {%>
+    <p>MENSAJE: <%= queryParams.msg %></p>
+<%}%>
+
+<br>
+<form action="/usuario/view/inicio" method="get">
+    <label for="search">Search: </label>
+    <input id= "search" type="text" name="search">
+    <button type="submit">Search </button>
+</form>
+
+
 <table>
     <tr>
         <th>Name</th>
@@ -33,7 +46,11 @@
         <td><%= obj.dni %></td>
         <td>
             <button>See</button>
-            <button>Edit</button>
+
+            <a href="/usuario/view/edit/<%= obj.id %>">
+                <button>Edit</button>
+            </a>
+
             <form action="/usuario/deleteFromView/<%= obj.id %>" method="post">
                 <button type="submit">Delete</button>
             </form>

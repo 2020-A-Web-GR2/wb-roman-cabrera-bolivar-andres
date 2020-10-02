@@ -1,7 +1,8 @@
 import {Injectable}  from "@nestjs/common";
-import {Repository} from "typeorm";
+import {FindManyOptions, Like, Not, Repository} from "typeorm";
 import {UsuarioEntity} from "./usuario.entity";
 import {InjectRepository} from "@nestjs/typeorm";
+import {not} from "rxjs/internal-compatibility";
 
 @Injectable()
 export class UsuarioService {
@@ -13,9 +14,24 @@ export class UsuarioService {
     createOne(newUser : UsuarioEntity){
         return this.repo.save(newUser)
     }
-    findAll(){
-        return this.repo.find()
+
+    findAll(text? : string){
+        const cons: FindManyOptions<UsuarioEntity> = {
+            where: [
+                {
+                    name: Like(`%${text}%`)
+                },
+                {
+                    last_name: Like(`%${text}%`)
+                },
+                {
+                    dni: Like(`%${text}%`)
+                }
+            ]
+        }
+        return this.repo.find(cons)
     }
+
     findOne(id: number){
         return this.repo.findOne(id)
     }

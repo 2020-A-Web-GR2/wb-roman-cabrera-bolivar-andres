@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPN - Ejemplo</title>
+
+    <style>
+        body{color: blue;}
+    </style>
+        <!--Bundling-->
+<!--    <link rel="stylesheet" href="/css/botones.css">-->
+<!--    <link rel="stylesheet" href="/css/estilos-generales.css">-->
+<!--    <link rel="stylesheet" href="/css/tablas.css">-->
+
+    <link rel="stylesheet" href="/css/completo.min.css">
+
+<!--    <style>-->
+<!--        /* Query Selectors */-->
+<!--        /*-->
+<!--            - Busqueda por nombre de etiqueta-->
+<!--            - Busqueda por id-->
+<!--            - Busqueda por clase-->
+<!--         */-->
+
+<!--        /*nombre etiqueta*/-->
+<!--        h1{-->
+<!--            color: brown;-->
+<!--        }-->
+
+<!--        h1{-->
+<!--            color: red;-->
+<!--        }-->
+
+<!--        h1{-->
+<!--            color: orange;-->
+<!--        }-->
+
+<!--        /*id*/-->
+<!--        #rojo{-->
+<!--            color: green;-->
+<!--        }-->
+
+<!--        /*clase*/-->
+<!--        .verde{-->
+<!--            color: greenyellow;-->
+<!--        }-->
+
+<!--        /* jerarquia: style > id > class > nombre etiqueta*/-->
+
+
+<!--        /*Combinators*/-->
+<!--        li.lista > p{-->
+<!--            background-color: pink;-->
+<!--        }-->
+
+<!--        h1{-->
+<!--            border-width: 3px;-->
+<!--            border-color: blue;-->
+<!--            border-style: solid;-->
+<!--            padding: 30px;-->
+<!--            margin: 50px;-->
+<!--            background-color: red;-->
+
+<!--        }-->
+<!--    </style>-->
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <style>
+        .rojo{
+            background-color: red;
+        }
+
+        .azul{
+            background-color: blue;
+        }
+
+        .amarillo{
+            background-color: yellow;
+        }
+
+        .rosado{
+            background-color: pink;
+        }
+
+        .verde{
+            background-color: greenyellow;
+        }
+
+        .naranja{
+            background-color: orange;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<h1>Componentes</h1>
+
+<div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+</div>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Grillas</h1>
+
+<!--Numero de coumnas 12-->
+<div class="row">
+    <div class="col-sm-4 amarillo">
+        1
+    </div>
+    <div class="col-sm-4 azul">
+        2
+    </div>
+    <div class="col-sm-4 rojo">
+        3
+    </div>
+    <div class="col-sm-12 rosado">
+        4
+    </div>
+    <div class="col-sm-6 azul">
+        5
+    </div>
+    <div class="col-sm-6 verde">
+        6
+    </div>
+
+    <div class="col-sm-1 naranja">1</div>
+    <div class="col-sm-1 naranja">2</div>
+    <div class="col-sm-1 naranja">3</div>
+    <div class="col-sm-1 naranja">4</div>
+    <div class="col-sm-1 naranja">5</div>
+    <div class="col-sm-1 naranja">6</div>
+    <div class="col-sm-1 naranja">7</div>
+    <div class="col-sm-1 naranja">8</div>
+    <div class="col-sm-1 naranja">9</div>
+    <div class="col-sm-1 naranja">10</div>
+    <div class="col-sm-1 naranja">11</div>
+    <div class="col-sm-1 naranja">12</div>
+
+    <div class="col-sm-12 naranja">13</div>
+    <div class="col-md-12 naranja">14</div>
+    <div class="col-lg-12 naranja">15</div>
+
+</div>
+
+<h1>Cabecera
+    <span>importante</span>
+</h1>
+<div>Contenedor</div>
+<p>Parrafo</p>
+
+
+
+
+<h1>Capitulo</h1>
+<h1 class="verde">Numero Uno</h1>
+<p id="rojo">Parrafo uno</p>
+<p class="verde">Parrafo dos</p>
+<p>Parrafo tres</p>
+<p style="color: yellow;">Parrafo cuatro</p>
+
+<ul>
+    <li class="lista">
+        <p>Uno</p>
+    </li>
+    <li>
+        <p>Dos</p>
+    </li>
+    <li>
+        <p>Tres</p>
+    </li>
+</ul>
+
+<!--header-->
+<h1>C1</h1>
+<h2>C2</h2>
+<h3>C3</h3>
+<h4>C4</h4>
+<h5>C5</h5>
+<h6>C6</h6>
+
+<!--Parrafo-->
+<p>Soy un parrafo</p>
+
+<!--Listas ordenadas y no ordenadas-->
+
+<!--unordered list-->
+<ul>
+<!--    list item-->
+    <li>Pan</li>
+    <li>Queso</li>
+    <li>Huevos</li>
+</ul>
+
+<!--ordered list-->
+<ol>
+    <li>Lunes</li>
+    <li>Martes</li>
+    <li>Miercoles</li> 
+</ol>
+
+<!--imagenes-->
+<img src="https://cdn.shortpixel.ai/spai/w_1003+q_lossy+ex_1+ret_img+to_webp/https://megaricos.com/wp-content/uploads/2017/05/Basquiat-1.jpg"
+     alt="Basquiat" height="400" width="400">
+
+<!--botones-->
+
+<button type="button">Aceptar</button>
+
+<!--anclas-->
+<a href="https://www.google.com.ec">Ir a google</a>
+
+<a href="https://www.google.com.ec">
+    <button type="button">Ir a google</button>
+</a>
+<a href="https://www.google.com.ec">
+    <p>Ir a google desde parrafo</p>
+</a>
+<a href="https://www.google.com.ec">
+    <img src="https://cdn.shortpixel.ai/spai/w_1003+q_lossy+ex_1+ret_img+to_webp/https://megaricos.com/wp-content/uploads/2017/05/Basquiat-1.jpg"
+         alt="Basquiat"
+        width="300"
+    height="300">
+</a>
+
+<!--tablas-->
+<table>
+    <!--        table row-->
+    <tr>
+        <!--    table header-->
+        <th>Nombre</th>
+        <th>Apellido</th>
+    </tr>
+
+    <tr>
+        <!--    table detail-->
+        <td>Bolívar</td>
+        <td>Román</td>
+    </tr>
+    <tr>
+        <td>Pamela</td>
+        <td>Carolina</td>
+    </tr>
+    <tr>
+        <td>Juan</td>
+        <td>Díaz</td>
+    </tr>
+</table>
+
+<script>
+    console.log('Hola Mundo')
+</script>
+
+<!--<script src="js/formularios.js"></script>-->
+<!--<script src="js/funcionalidad.js"></script>-->
+<!--<script src="js/tablas.js"></script>-->
+<script src="js/completo.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

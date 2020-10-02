@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import {UsuarioService} from "./usuario.service";
 import {MascotaService} from "../mascota/mascota.service";
-import {canReportError} from "rxjs/internal/util/canReportError";
+import {UsuarioEntity} from "./usuario.entity";
 
 @Controller('usuario')
 export class UsuarioController {
@@ -121,13 +121,6 @@ export class UsuarioController {
                 msg: 'Server error'
             })
         }
-
-        /*const index = this.arrayUsers.findIndex(
-            // (user) => user.id === Number(pathParams.id)
-            (user) => user.id === Number(pathParams.id)
-        )
-        this.arrayUsers[index] = bodyParams.name;
-        return this.arrayUsers[index];*/
     }
 
 
@@ -217,11 +210,12 @@ export class UsuarioController {
 
     @Get('view/inicio')
     async inicio(
+        @Query() queryParams,
         @Res() res
     ) {
         let result;
         try {
-            result = await this._usuarioService.findAll()
+            result = await this._usuarioService.findAll(queryParams.search)
         } catch (e) {
             throw new InternalServerErrorException("Error looking for users")
         }
@@ -233,12 +227,16 @@ export class UsuarioController {
             throw new NotFoundException("No users found")
         }
     }
+
+
+
     @Get('view/create')
     createUserView(
         @Query() queryParams,
         @Res() res
     ) {
-        res.render('user/create',
+        res.render(
+            'user/create',
             {
                 error: queryParams.error,
                 name: queryParams.name,
@@ -246,6 +244,33 @@ export class UsuarioController {
                 dni : queryParams.dni
             }
         )
+    }
+
+    @Get('view/edit/:id')
+    async editUsuarioView(
+        @Query() queryParams,
+        @Param() pathParams,
+        @Res() res
+    ){
+        const id = Number(pathParams.id)
+        let userFound;
+        try {
+            userFound = await this._usuarioService.findOne(id)
+        }catch (error){
+            console.error('Server Error')
+            return res.redirect('/usuario/view/inicio?error=Error buscando usuario')
+        }
+        if(userFound){
+            return res.render(
+                'user/create',
+                {
+                    error : queryParams.error,
+                    user : userFound
+                }
+            )
+        } else {
+            return res.redirect('/usuario/view/inicio?error= User not found')
+        }
     }
 
     @Post('createFromView')
@@ -266,7 +291,6 @@ export class UsuarioController {
         }else{
             const error = 'Send params DNI(10), name and last_name'
             return res.redirect('/usuario/view/create?error=' + error)
-
         }
         let responseCreateUser;
         try {
@@ -283,7 +307,28 @@ export class UsuarioController {
             const error = "Error creating user"
             return res.redirect('/usuario/view/create?error=' + error + dataNames + dataDNI)
         }
+    }
 
+    @Post('editFromView/:id')
+    async editFromView(
+        @Param() pathParams,
+        @Body() bodyParams,
+        @Res() res
+    ){
+        const editedUser = {
+            id : Number(pathParams.id),
+            name : pathParams.name,
+            last_name : pathParams.last_name,
+            //dni : pathParams.dni
+        } as UsuarioEntity;
+
+        try{
+            await this._usuarioService.updateOne(editedUser)
+            return res.redirect('/usuario/view/inicio?msg=User edited')
+        }catch (e) {
+            console.error(e)
+            return res.redirect('/usuario/view/inicio?msg=Error editanto usuario')
+        }
     }
 
     @Post('deleteFromView/:id')
