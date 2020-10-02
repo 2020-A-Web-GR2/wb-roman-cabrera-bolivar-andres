@@ -1,0 +1,93 @@
+<%- include ('./header.ejs')%>
+<title>Main</title>
+
+<body>
+<div class="topnav">
+    <a class="active" href="/universe">Main</a>
+    <a href="universe/create">Create</a>
+    <a href="/logout">Logout</a>
+    <div class="search-container">
+        <div class="form-check-inline">
+            <input class="form-check-input" type="radio" name="query" id="searchName" checked>
+            <label class="form-check-label" for="searchName">Name</label>
+        </div>
+        <div class="form-check-inline">
+            <input class="form-check-input" type="radio" name="query" id="searchLocation">
+            <label class="form-check-label" for="searchLocation">Location</label>
+        </div>
+        <form action="/universe" method="GET">
+            <input id="searchQuery" type="text" placeholder="Search..." name="searchQuery">
+            <label for="searchQuery"></label>
+            <button type="submit" onclick="getChecked()">Submit</button>
+        </form>
+        <script>
+            function getChecked(){
+                var field = document.getElementById("searchQuery");
+                var parameter = document.querySelector('input[name = "query"]:checked').id
+                field.setAttribute("name",parameter);
+            }
+        </script>
+    </div>
+</div>
+
+<% if (typeof msg != 'undefined'){%>
+    <div class="alert-primary" role="alert">
+        <%= msg %>
+    </div>
+<%}%>
+<% if (typeof error != 'undefined'){%>
+    <div class="alert-danger" role="alert">
+        <%= error %>
+    </div>
+<%}%>
+
+<% if (typeof universes === 'undefined'){ %>
+    <div class="alert-primary" role="alert">Nothing found</div>
+<%} else{ %>
+    <% if (universes.length === 0 ){%>
+        <div class="alert-primary" role="alert">Nothing found</div>
+    <% } else {%>
+        <div class="container mt-5">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Width</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% universes.forEach((obj)=>{ %>
+                    <tr>
+                        <td><%= obj.id %></td>
+                        <td><%= obj.name %></td>
+                        <td><%= obj.location %></td>
+                        <td><%= obj.width %></td>
+                        <td><%= obj.height %></td>
+                        <td><%= obj.dateBorn %></td>
+                        <td>
+                            <a href="/universe/edit/<%= obj.id %>">
+                                <button class="btn-warning">
+                                    Edit
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <form action="/universe/delete/<%= obj.id %>" method="POST">
+                                <button type="submit" class="btn-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } ) %>
+                </tbody>
+            </table>
+        </div>
+    <%}%>
+<% }%>
+
+</body>

@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
@@ -19,6 +22,43 @@ let AppController = class AppController {
     getHello() {
         return this.appService.getHello();
     }
+    loginPost(res, body, session) {
+        const user = body.user;
+        const passwd = body.password;
+        if (user == 'bolivar' && passwd == '1234') {
+            session.user = user;
+            session.roles = ['Admin'];
+            return res.redirect('protected');
+        }
+        else {
+            if (user == 'pamela' && passwd == '1234') {
+                session.user = user;
+                session.roles = ['Supervisor'];
+                return res.redirect('protected');
+            }
+            else {
+                return res.redirect('/login');
+            }
+        }
+    }
+    protected(res, session) {
+        const loggedIn = session.user;
+        if (loggedIn) {
+            return res.render('login/protected', {
+                user: session.user,
+                roles: session.roles
+            });
+        }
+        else {
+            return res.redirect('/login');
+        }
+    }
+    logout(res, req, session) {
+        session.username = undefined;
+        session.roles = undefined;
+        req.session.destroy();
+        return res.redirect('/login');
+    }
 };
 __decorate([
     common_1.Get(),
@@ -26,6 +66,32 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
+__decorate([
+    common_1.Post('login'),
+    __param(0, common_1.Res()),
+    __param(1, common_1.Body()),
+    __param(2, common_1.Session()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "loginPost", null);
+__decorate([
+    common_1.Get('protected'),
+    __param(0, common_1.Res()),
+    __param(1, common_1.Session()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "protected", null);
+__decorate([
+    common_1.Get('logout'),
+    __param(0, common_1.Res()),
+    __param(1, common_1.Req()),
+    __param(2, common_1.Session()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "logout", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService])

@@ -1,0 +1,51 @@
+<%- include('../shared/general-styles/general-styles-component')%>
+<%- include('../shared/menu/menu-component')%>
+<% const userExists = typeof user != 'undefined'%>
+
+<% let nameExists = typeof name !== 'undefined' %>
+<% let lastNameExists = typeof last_name !== 'undefined' %>
+<% let dniExists = typeof dni !== 'undefined' %>
+
+<h1> <%= userExists ? 'Edit' : 'Create'%> user</h1>
+
+<% if (userExists) {%>
+    <% nameExists = true%>
+    <% lastNameExists = true%>
+    <% dniExists = true%>
+
+    <% name = user.name%>
+    <% last_name = user.last_name%>
+    <% dni = user.dni%>
+<%}%>
+
+
+<%if (typeof error !== 'undefined') {%>
+    <p>MSG: <%= error %></p>
+<%}%>
+
+<form action="<%= userExists ? '/usuario/editFromView/' + user.id : '/usuario/createFromView'%> "
+      method="POST">
+
+    <label for="nameID">Name:</label>
+    <input id="nameID" type="text" name="name" value="<%= nameExists ? name : '' %>">
+    <br>
+
+    <label for="lastNameID">Last name:</label>
+    <input id="lastNameID" type="text" name="last_name" value="<%= lastNameExists ? last_name : '' %>">
+    <br>
+
+    <label for="dniID">DNI:</label>
+    <input id="dniID" type="text"
+           <% if (userExists) {%>
+                disabled
+            <% } %>
+           name="dni" value=" <% dniExists ? dni : '' %>">
+    <br>
+
+    <button type="submit">SUBMIT</button>
+    <button type="reset">RESET</button>
+    <button type="reset">BUTTON</button>
+
+</form>
+
+<%- include('../shared/general-functions/general-functions-component')%>

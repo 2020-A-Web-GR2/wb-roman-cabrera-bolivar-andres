@@ -8,6 +8,8 @@ import {MascotaModule} from "./mascota/mascota.module";
 import {VacunaModule} from "./vacuna/vacuna.module";
 import {VacunaEntity} from "./vacuna/vacuna.entity";
 import {MascotaEntity} from "./mascota/mascota.entity";
+import {UniverseEntity} from "./universe/universe.entity";
+import {UniverseModule} from "./universe/universe.module";
 
 
 @Module({
@@ -15,6 +17,7 @@ import {MascotaEntity} from "./mascota/mascota.entity";
       UsuarioModule,
       MascotaModule,
       VacunaModule,
+      UniverseModule,
       TypeOrmModule.forRoot({
           name: 'default', //connection name
           type: 'mysql', //mysql, postgres, oracle, etc
@@ -26,7 +29,8 @@ import {MascotaEntity} from "./mascota/mascota.entity";
           entities: [
               UsuarioEntity,
               VacunaEntity,
-              MascotaEntity
+              MascotaEntity,
+              UniverseEntity
           ], //describe all entities to connect
           synchronize: true, //update database schema
           dropSchema: false, //delete data and database schema

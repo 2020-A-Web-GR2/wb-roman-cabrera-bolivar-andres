@@ -17,6 +17,8 @@ const mascota_module_1 = require("./mascota/mascota.module");
 const vacuna_module_1 = require("./vacuna/vacuna.module");
 const vacuna_entity_1 = require("./vacuna/vacuna.entity");
 const mascota_entity_1 = require("./mascota/mascota.entity");
+const universe_entity_1 = require("./universe/universe.entity");
+const universe_module_1 = require("./universe/universe.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,6 +27,7 @@ AppModule = __decorate([
             usuario_module_1.UsuarioModule,
             mascota_module_1.MascotaModule,
             vacuna_module_1.VacunaModule,
+            universe_module_1.UniverseModule,
             typeorm_1.TypeOrmModule.forRoot({
                 name: 'default',
                 type: 'mysql',
@@ -36,7 +39,8 @@ AppModule = __decorate([
                 entities: [
                     usuario_entity_1.UsuarioEntity,
                     vacuna_entity_1.VacunaEntity,
-                    mascota_entity_1.MascotaEntity
+                    mascota_entity_1.MascotaEntity,
+                    universe_entity_1.UniverseEntity
                 ],
                 synchronize: true,
                 dropSchema: false,

@@ -1,0 +1,65 @@
+<%- include ('./header.ejs')%>
+<title>Create</title>
+<body>
+<div class="topnav">
+    <a href="/universe">Main</a>
+    <a class="active" href="universe/create">Create</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<%const existsUniverse = typeof universe != 'undefined'%>
+
+<h2 class="mb-3 mt-4 text-center"><b><%= existsUniverse ? 'Edit universe' : 'Create universe'%></b></h2>
+<% if (typeof error != 'undefined'){%>
+    <div class="alert alert-danger text-center ml-5 mr-5" role="alert">
+        <%= error %>
+    </div>
+<%}%>
+
+<div class="container">
+    <form action="<%= existsUniverse ? + universe.id : 'create'%>" method="POST">
+        <div class="form-group row">
+            <label for="name"  class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input id="name" type="text" name="name" required="required" class="form-control" value="<%= existsUniverse ? universe.name : '' %><%= typeof(name)!='undefined' ? name : '' %>"<%= existsUniverse ? 'disabled' : ''%>>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+                <input id="location" type="text" name="location"  class="form-control" value="<%= existsUniverse ? universe.location : '' %><%= typeof(location)!='undefined' ? location : '' %>">
+            </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <label for="width" class="col-sm-2 col-form-label">Width</label>
+            <div class="col-sm-10">
+                <input id="width" type="number"  name="width"  class="form-control" value="<%= existsUniverse ? universe.width : '' %><%= typeof(width)!='undefined' ? width : '' %>">
+            </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <label for="height" class="col-sm-2 col-form-label">Height</label>
+            <div class="col-sm-10">
+                <input id="height" type="number"  name="height"  class="form-control" value="<%= existsUniverse ? universe.height : '' %><%= typeof(height)!='undefined' ? height : '' %>">
+            </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+            <label for="dateBorn" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+                <input id="dateBorn" type="text"  name="dateBorn"  class="form-control" value="<%= existsUniverse ? universe.dateBorn : '' %><%= typeof(dateBorn)!='undefined' ? dateBorn : '' %>">
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <button type="submit" class="btn-danger"><%= existsUniverse ? 'Edit' : 'Create' %></button>
+        </div>
+    </form>
+</div>
+</body>
